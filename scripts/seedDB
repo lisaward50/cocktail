@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+const { Drink, Category, Glass, Ingredient, db } = require('../models');
+const { drinks, categories, glasses, ingredients } = require('../data');
+
+(async () => {
+
+	await Category.bulkCreate(categories.map(([category_name, description]) => ({ category_name, description })));
+
+	await Glass.bulkCreate(glasses.map(([glass_name]) => ({ glass_name })));
+
+    await Ingredient.bulkCreate(ingredients.map(([ingredient_name]) => ({ ingredient_name })));
+    
+    await Drink.bulkCreate(drinks.map(([drink_name, image, code, instructions, ingredients, category_id, glass_id]) => ({ drink_name, image, code, instructions, ingredients, category_id, glass_id})));
+
+	db.close();
+})();

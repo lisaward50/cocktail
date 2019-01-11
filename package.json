@@ -1,0 +1,41 @@
+{
+  "name": "Project2",
+  "engines": {
+    "node": "11.1.0",
+    "yarn": "1.12.3"
+  },
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://git.generalassemb.ly/lisaward50/Project2.git",
+  "author": "lisaward50 <lisa.ward50@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-react-views": "^0.10.5",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "pg": "^7.4.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "sequelize": "^4.39.0",
+    "sequelize-cli": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "eslint . --fix",
+    "db:init": "dropdb --if-exists bartender_dev && createdb bartender_dev",
+    "db:reset": "./scripts/resetDB",
+    "db:seed": "./scripts/seedDB",
+    "debug": "nodemon --inspect-brk"
+  }
+}
